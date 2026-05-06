@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>斜めSAGAカウンター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header-controls">
+        <button id="exportButton" class="header-button export-button">CSV出力</button>
+        <button id="importButton" class="header-button import-button">CSV読込</button>
+        <button id="resetButton" class="header-button reset-button">リセット</button>
+        <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
+    </div>
+    <h1>斜めSAGAカウンター</h1>
+
+    <div class="container">
+        <div id="pendingStatus" class="status-message">転落Gの入力を待機中...</div>
+        <div class="input-group">
+            <label for="gInput">G数:</label>
+            <input type="number" id="gInput" placeholder="G数を入力">
+        </div>
+        <div class="button-row">
+            <button id="fallButton" class="action-btn-large fall-btn">転落Gを記録</button>
+            <button id="diagonalButton" class="action-btn-large diagonal-btn" disabled>斜めGを記録 (保存)</button>
+            <button id="stButton" class="action-btn-large st-btn">ST当選</button>
+        </div>
+    </div>
+
+    <div class="results">
+        <h2>斜めSAGA揃い確率</h2>
+        <p id="averageDisplay">まだデータがありません</p>
+
+        <h2>保存リスト</h2>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>転落G</th>
+                    <th>斜めG</th>
+                    <th>母数</th>
+                    <th>確率</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="dataTableBody">
+                <!-- データはここにJavaScriptで挿入されます -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
