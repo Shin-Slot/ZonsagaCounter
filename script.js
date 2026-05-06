@@ -159,13 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 入力UIの状態（メッセージとボタンの有効無効）を更新
     function updateInputUI() {
         if (pendingFallG !== null) {
-            pendingStatus.textContent = `転落G: ${pendingFallG} を記録中... 次に斜めGを入力してください`;
-            pendingStatus.style.backgroundColor = '#fff3cd';
+            pendingStatus.textContent = `転落G: ${pendingFallG} を記録中...`;
+            pendingStatus.style.backgroundColor = '#fff3cd'; // warning color light
             pendingStatus.style.color = '#856404';
             diagonalButton.disabled = false;
         } else {
             pendingStatus.textContent = '転落Gの入力を待機中...';
-            pendingStatus.style.backgroundColor = '#e9ecef';
+            pendingStatus.style.backgroundColor = '#e9ecef'; // light gray
             pendingStatus.style.color = '#495057';
             diagonalButton.disabled = true;
         }
