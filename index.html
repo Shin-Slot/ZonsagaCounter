@@ -19,46 +19,45 @@
 
     <main class="container">
         <div id="pendingStatus" class="status-message">転落Gの入力を待機中...</div>
-        
+
         <div class="input-section">
             <div class="input-group">
-                <label for="gInput">G数</label>
-                <input type="number" id="gInput" placeholder="現在のG数を入力" inputmode="numeric" pattern="[0-9]*">
-            </div>
-            
-            <div class="button-grid">
-                <button id="fallButton" class="action-btn-large fall-btn">転落G記録</button>
-                <button id="diagonalButton" class="action-btn-large diagonal-btn" disabled>斜めG記録</button>
-                <button id="stButton" class="action-btn-large st-btn">ST当選</button>
+                <input type="number" id="gInput" placeholder="G数入力" inputmode="numeric" pattern="[0-9]*">
+                <div class="input-actions">
+                    <button id="fallButton" class="action-btn-main fall-btn">転落G</button>
+                    <button id="diagonalButton" class="action-btn-main diagonal-btn" disabled>斜めG</button>
+                </div>
             </div>
         </div>
+
+        <section class="results-compact">
+            <div class="stats-row">
+                <span class="stats-label">平均:</span>
+                <span id="averageDisplay">データなし</span>
+                <button id="stButton" class="st-btn-small">ST当選</button>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <div class="table-container">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>転落</th>
+                            <th>斜め</th>
+                            <th>母数</th>
+                            <th>確率</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataTableBody">
+                        <!-- データはここにJavaScriptで挿入されます -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
-
-    <section class="results">
-        <div class="stats-card">
-            <h2>斜めSAGA揃い確率</h2>
-            <p id="averageDisplay">データなし</p>
-        </div>
-
-        <div class="table-container">
-            <h2>保存リスト</h2>
-            <table id="dataTable">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>転落</th>
-                        <th>斜め</th>
-                        <th>母数</th>
-                        <th>確率</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
-                <tbody id="dataTableBody">
-                    <!-- データはここにJavaScriptで挿入されます -->
-                </tbody>
-            </table>
-        </div>
-    </section>
 
     <script src="script.js"></script>
 </body>
